@@ -14,13 +14,13 @@
   "main": "server.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/adonnelly246/level5Capstone.git"
+    "url": "git+https://github.com/adonnelly-anickell-capstone5/game-finder.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/adonnelly246/level5Capstone/issues"
+    "url": "https://github.com/adonnelly-anickell-capstone5/game-finder/issues"
   },
-  "homepage": "https://github.com/adonnelly246/level5Capstone#readme"
+  "homepage": "https://github.com/adonnelly-anickell-capstone5/game-finder#readme"
 }

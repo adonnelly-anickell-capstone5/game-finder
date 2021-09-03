@@ -9,7 +9,6 @@ app.use(morgan('dev'))
 
 //Routes//
 app.use("/games", require("./routes/gamesRouter.js"))
-app.use("/")
 
 mongoose.connect('mongodb://localhost:27017/gamesdb', 
     {
@@ -28,7 +27,7 @@ app.use((err, req, res, next)=>{
   return res.send({errMsg: err.message})      
 })
 
-app.listen(8000, ()=>{
-    console.log("The server is running on port 8000")
+app.listen(9000, ()=>{
+    console.log("The server is running on port 9000")
   })
   

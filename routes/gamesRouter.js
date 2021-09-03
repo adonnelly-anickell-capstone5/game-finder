@@ -60,3 +60,4 @@ gamesRouter.put("/:gameId", (req,res, next)=>{
 })
 
 
+module.exports = gamesRouter
