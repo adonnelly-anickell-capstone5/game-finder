@@ -19,13 +19,14 @@ const gameSchema = new Schema({
         enum: ['FPS','Cozy','MMORPG']
     },
     console:{
-        type: String,
-        enum: ['PS4','PS5','XBoxONE', 'XBoxX', 'PC','Nintendo Switch'] //could have more than one console per game-
-        // one game to many consoles- data relationship
-        //ref: "Console"
+         //could have more than one console per game----one game to many consoles- data relationship
+         type: String,
+         enum: ['PS4','PS5','XBoxONE', 'XBoxX', 'PC','Nintendo Switch'],
+         required: true
     },
     rating:{
         type: Number,
+        enum: [1,2,3,4,5],
         required: true
     }
 
