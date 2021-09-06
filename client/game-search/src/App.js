@@ -5,6 +5,7 @@ import Display from './Display.js'
 
 export default function App(){
     const [games, setGames] = useState([])
+
   //GET
   function getGames(){
     axios.get('/games',)
@@ -22,24 +23,10 @@ function addGame(newGame){
 }
 
 //DELETE
-function deleteGame(gameId){
-    axios.delete(`/games/${gameId}`)
-        .then(res =>{
-            setGames(prev=> prev.filter(game => game._id !== gameId))
-        })
-        .catch(err => console.log(err))
 
-}
 
 //PUT
-function editGame(updates, gameId){
-    axios.put(`/games/${gameId}`, updates)
-        .then(res=>{
-            setGames(prev => prev.map(game => game._id !== gameId ? game : res.data))
-            console.log(updates)
-        })
-        .catch(err => console.log(err))
-}
+
 
 useEffect(()=>{ 
    getGames()
@@ -50,20 +37,10 @@ useEffect(()=>{
     return(
         <div>
             <Form 
-                submit= {}
+                submit= {addGame}
                 btnText ="Search"
             />
             <div>
-            {
-                games.map(game=> 
-                <Display
-                 {...game} 
-                 key={game._id} 
-                 deleteGame= {deleteGame}
-                 editGame ={editGame}
-                 />)
-                
-                }
                 
             </div>
         </div>
