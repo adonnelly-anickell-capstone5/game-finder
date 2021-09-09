@@ -14,9 +14,7 @@
   "main": "server.js",
   "repository": {
     "type": "git",
-
     "url": "git+https://github.com/adonnelly-anickell-capstone5/game-finder.git"
-
   },
   "keywords": [],
   "author": "",
