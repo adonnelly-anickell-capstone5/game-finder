@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios'
 import Form from './Form.js'
+import Nav from "../src/routers/Nav"
 import Display from './Display.js'
 
 export default function App(){
@@ -36,6 +37,7 @@ useEffect(()=>{
 
     return(
         <div>
+            <Nav />
             <Form 
                 submit= {addGame}
                 btnText ="Search"
