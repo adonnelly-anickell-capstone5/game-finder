@@ -7,8 +7,8 @@ export default function Form(props){
         price: props.price || "",
         category: props.category || "",
         console: props.console || "",
-        rating: props.rating || "",
-        searchTerm: props.searchTerm || ""
+        rating: props.rating || ""
+        // searchTerm: props.searchTerm || ""
 
     }
 
@@ -27,16 +27,16 @@ export default function Form(props){
 
     return(
         <form onSubmit= {handleSubmit}>
-            <input 
+            {/* <input 
                 type="text" 
                 name="searchTerm" 
                 value={inputs.searchTerm} 
                 onChange={handleChange} 
                 placeholder="Search">
-            </input>
+            </input> */}
 
         <select id = "dropdown" onChange ={handleChange}  >  
-            <option> ---Search By--- </option>  
+            <option> ---Sort By--- </option>  
             <option value={inputs.title}> Title </option>  
             <option value={inputs.category}> Category </option>  
             <option value={inputs.console}> Console </option>  

@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
-import Search from "./Search.js"
-import Form from './Form.js'
+import Form from '../Form.js'
+import App from '../App.js'
 
 function Suggested(props){
     const [favorite, setFavorite] = useState([]);
@@ -11,7 +11,7 @@ function Suggested(props){
 
         return(
             <div>
-                    <Search/>
+                    <Form/>
                     {/* searchTerm prop from Form */}
                     <h1>Results for {props.inputs.searchTerm}</h1> 
                   
