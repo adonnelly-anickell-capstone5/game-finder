@@ -3,15 +3,16 @@ import Search from "./Search"
 import Profile from "./Profile"
 import Suggested from "./Suggested"
 
-function Nav(){
+
+export default function Nav(){
 
     return(
 
         <div>
             <nav>
-            <Link to="/Search">Search</Link>
-            <Link to="/Suggested">Suggested</Link>
-            <Link to="/Profile">Profile</Link>
+            <Link to="/">Choose Filters</Link>
+            <Link to="/Suggested">Suggested Games</Link>
+            <Link to="/Profile">My Profile</Link>
             </nav>
 
             <Switch>
@@ -24,5 +25,3 @@ function Nav(){
         </div>
     )
 }
-
-export default Nav

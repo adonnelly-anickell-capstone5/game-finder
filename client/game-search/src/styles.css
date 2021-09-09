@@ -34,7 +34,7 @@ a:link {
   a:hover {
     padding: 20px;
     text-decoration: none;
-    color: red;
+    color: #B53220;
     font-size: x-large;
   }
   
@@ -42,7 +42,10 @@ a:link {
   a:active {
     padding: 20px;
     text-decoration: none;
-    color: red;
+    color: #B53220;
     font-size: x-large;
   }
   
+  .zelda-img {
+      width: 100%;
+  }
