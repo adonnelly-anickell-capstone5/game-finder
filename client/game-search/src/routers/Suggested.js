@@ -1,9 +1,9 @@
 import React, {useState} from 'react'
-import Search from "./Search.js"
 import Form from '../Form.js'
+import App from '../App.js'
 
-export default function Suggested(props){
-    const [edit, setEdit] = useState(false)
+
+function Suggested(props){
     const [favorite, setFavorite] = useState([]);
 
     const handleToggle = (id) => {
@@ -12,11 +12,9 @@ export default function Suggested(props){
 
         return(
             <div>
-                {/* {!edit ?   
-                <> */}
-                    {/* <Search/> */ } 
+                    <Form/>
                     {/* searchTerm prop from Form */}
-                    {/* <h1>Results for {props.inputs.searchTerm}</h1> 
+                    <h1>Results for {props.inputs.searchTerm}</h1> 
                   
                             <ul><li>{props.games.map(game=>{game.title})}</li></ul>
 
@@ -25,7 +23,7 @@ export default function Suggested(props){
                                     key={index} 
                                     onClick={()=>handleToggle(index)}
                                     color={favorite.indexOf(index) > 0 ? 'red' : 'blue'}> </button>
-                                })} */}
+                                })}
                             
                      
             </div> 
@@ -35,3 +33,4 @@ export default function Suggested(props){
     )
 }
 
+export default Suggested
