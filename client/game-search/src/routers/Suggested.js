@@ -27,22 +27,7 @@ export default function Suggested(props){
                                     color={favorite.indexOf(index) > 0 ? 'red' : 'blue'}> </button>
                                 })} */}
                             
-                    
-                {/* </>
-                
-                :
-                <>
-                    <Search/>
-                    <button onClick= {props.getGames()}>SEARCH!</button>
-                    <h1>Results</h1>
-                    
-                            <ul><li>{props.games.map(game=>{game.title})}</li></ul>  
-                            <button onClick={props.handleToggle()}>Save Game</button>
-                            <button onClick={()=>setFavorite(prevToggle => !prevToggle)}>Toggle Off</button> 
-                            {/*  heart image-- full*/}
-                    {/* </>  
-                
-                } */} 
+                     
             </div> 
 
             

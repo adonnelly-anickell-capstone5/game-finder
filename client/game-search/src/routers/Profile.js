@@ -27,6 +27,7 @@ function Profile(props){
 
     return(
         <div>
+            <Form />
             {/* map through the saved items and display in list */}
             <Form 
                 submit= {addGame}
