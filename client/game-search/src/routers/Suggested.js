@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import Search from "./Search.js"
-import Form from './Form.js'
+import Form from '../Form.js'
 
 function Suggested(props){
     const [favorite, setFavorite] = useState([]);
