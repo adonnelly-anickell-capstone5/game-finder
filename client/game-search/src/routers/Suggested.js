@@ -16,7 +16,7 @@ function Suggested(props){
                     {/* searchTerm prop from Form */}
                     <h1>Results for {props.inputs.searchTerm}</h1> 
                   
-                            <ul><li>{props.games.map(game=>{game.title})}</li></ul>
+                            {/* <ul><li>{props.games.map(game=>{game.title})}</li></ul> */}
 
                             {favorite.map((item,index) => {
                                 <button 
