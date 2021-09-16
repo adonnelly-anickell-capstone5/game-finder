@@ -21,6 +21,9 @@ function Profile(props){
             .catch(err => console.log(err))
     }
 
+    //DELETE from fave list
+
+    
     useEffect(()=>{ 
         getGames()
      }, [])
@@ -28,11 +31,8 @@ function Profile(props){
     return(
         <div>
             {/* map through the saved items and display in list */}
-            <Form 
-                submit= {addGame}
-                btnText ="Search"
-            />
-     
+
+            <button onClick={()=>props.deleteFave(/*_id*/)}>Delete From List</button>
         </div>
     )
 }
