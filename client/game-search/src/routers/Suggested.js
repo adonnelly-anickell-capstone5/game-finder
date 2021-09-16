@@ -2,30 +2,38 @@ import React, {useState} from 'react'
 import Form from '../Form.js'
 import App from '../App.js'
 
-
 function Suggested(props){
-    const [favorite, setFavorite] = useState([]);
+    const [favorite, setFavorite] = useState(false);
+    const {title, players, category, gameConsole, _id} = props
 
-    const handleToggle = (id) => {
-      setFavorite([...favorite, id]);
+    //fake games data for testing
+    const games = [{ _id: 1, title:"Legend of zelda: Ocarina of Time", players: 1, category: "rpg", gameConsole: ["N64"]}, { _id:2, title: "Call of Duty"}]
+    let faveGames = []
+
+    const handleToggle = (newFave) => {
+      setFavorite(!favorite);
+        //   console.log(`favorite ${newFave.title}`)
+          faveGames = [...faveGames, newFave]
+        //   console.log(faveGames)
     }
-
         return(
             <div>
-                    <Form/>
-                    {/* searchTerm prop from Form */}
-                    <h1>Results for {props.inputs.searchTerm}</h1> 
-                  
-                            {/* <ul><li>{props.games.map(game=>{game.title})}</li></ul> */}
-
-                            {favorite.map((item,index) => {
-                                <button 
-                                    key={index} 
-                                    onClick={()=>handleToggle(index)}
-                                    color={favorite.indexOf(index) > 0 ? 'red' : 'blue'}> </button>
-                                })}
-                            
-                     
+                <Form/>
+                    <h1>Suggested Games</h1> 
+                    <ul>
+                        {games.map((item, index)=>( 
+                        <li key={index}>
+                            <h2>{item.title} </h2>
+                            <p>Players: {item.players}</p>
+                            <p>Category: {item.category}</p>
+                            <p>Console: {item.gameConsole}</p>
+                            <button 
+                            onClick={()=>handleToggle(item)}
+                            icon={favorite ? "heart" : "heart outline"}> heartIcon
+                            </button> 
+                        </li>)) }
+                           
+                    </ul>
             </div> 
 
             
