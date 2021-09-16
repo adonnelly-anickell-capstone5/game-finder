@@ -5,6 +5,7 @@ import axios from "axios"
 
 function Profile(props){
     const [games, setGames] = useState([])
+    const [faveGames, setFaveGames] = useState([])
 
     //GET
     function getGames(){
@@ -21,18 +22,34 @@ function Profile(props){
             .catch(err => console.log(err))
     }
 
+    //DELETE from fave list
+    function deleteFave(faveId){
+        axios.delete(`/faveGames/${faveId}`)
+        .then(res =>{
+            setFaveGames(prev=> prev.filter(fave => fave._id !== faveId))
+        })
+        .catch(err => console.log(err))
+
+    }
+    
     useEffect(()=>{ 
         getGames()
      }, [])
 
     return(
         <div>
-            {/* map through the saved items and display in list */}
-            <Form 
-                submit= {addGame}
-                btnText ="Search"
-            />
-     
+            <Suggested submit = {addGame}/>
+            {
+                games.map(game=> 
+                <Display
+                 {...faveGames} 
+                 key={faveGames._id} 
+                 deleteBounty= {deleteFave}
+                 />)
+                
+                }
+
+            <button onClick={()=>props.deleteFave(/*_id*/)}>Delete From List</button>
         </div>
     )
 }
