@@ -1,4 +1,6 @@
 import React, {useState} from 'react'
+import Profile from './routers/Profile.js'
+
 
 export default function Form(props){
     const initInputs = {
@@ -8,8 +10,6 @@ export default function Form(props){
         category: props.category || "",
         console: props.console || "",
         rating: props.rating || ""
-        // searchTerm: props.searchTerm || ""
-
     }
 
     const [inputs, setInputs] = useState(initInputs)
@@ -20,21 +20,14 @@ export default function Form(props){
     }
     function handleSubmit(e){
         e.preventDefault()
-        props.submit(inputs, props._id)
+        props.getGames(inputs, props._id)
         setInputs(initInputs)
     }
 
 
     return(
         <form onSubmit= {handleSubmit}>
-            {/* <input 
-                type="text" 
-                name="searchTerm" 
-                value={inputs.searchTerm} 
-                onChange={handleChange} 
-                placeholder="Search">
-            </input> */}
-
+            
         <select id = "dropdown" onChange ={handleChange}  >  
             <option> ---Sort By--- </option>  
             <option value={inputs.title}> Title </option>  
@@ -43,7 +36,7 @@ export default function Form(props){
             <option value={inputs.rating}> Rating </option>  
         </select>  
 
-            <button >{props.btnText}</button>
+            <button >Submit</button>
 
         </form>
     )
