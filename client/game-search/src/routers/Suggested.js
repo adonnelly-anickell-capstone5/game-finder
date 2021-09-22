@@ -14,7 +14,7 @@ function Suggested(props){
       setFavorite(!favorite);
         //   console.log(`favorite ${newFave.title}`)
           faveGames = [...faveGames, newFave]
-        //   console.log(faveGames)
+          console.log(faveGames)
     }
         return(
             <div>
