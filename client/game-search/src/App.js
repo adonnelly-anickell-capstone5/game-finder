@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import Nav from "../src/routers/Nav"
-import Form from "../Form"
+import Form from "./Form"
 import axios from "axios"
 
 export default function App(props){

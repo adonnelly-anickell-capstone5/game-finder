@@ -1,7 +1,9 @@
 import React, {useState} from 'react'
 import App from '../App.js'
+import Suggested from './Suggested.js'
 
 export default function Profile(props){
+    const faveGames = props.faveGames
     return(
         <div>
             <h1>Your Favorite Games List</h1>
