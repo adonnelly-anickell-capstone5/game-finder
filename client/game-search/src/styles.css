@@ -3,6 +3,7 @@
 body {
  background-color: black;
  text-transform: uppercase;
+ text-align: center;
 }
 
 
@@ -49,3 +50,29 @@ a:link {
   .zelda-img {
       width: 100%;
   }
+
+  .button-container{
+    /* display:inline-block; */
+    position:relative;
+    margin: auto;
+}
+
+.button-sort {
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    /* top: 1000px; */
+    /* height: 75%; */
+    left: 0;
+    right: 0;
+    align-content: center;
+}
+
+.button-sort button {
+    padding: 10px;
+    margin: 10px;
+    font-family: 'Press Start 2P', cursive;
+    background-color: #4241FE;
+    color: white;
+}
+

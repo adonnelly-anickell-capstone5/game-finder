@@ -12,9 +12,9 @@ function Suggested(props){
 
         return(
             <div>
-                    <Form/>
+                    {/* <Form/> */}
                     {/* searchTerm prop from Form */}
-                    <h1>Results for {props.inputs.searchTerm}</h1> 
+                    {/* <h1>Results for {props.inputs.searchTerm}</h1> 
                   
                             <ul><li>{props.games.map(game=>{game.title})}</li></ul>
 
@@ -25,7 +25,7 @@ function Suggested(props){
                                     color={favorite.indexOf(index) > 0 ? 'red' : 'blue'}> </button>
                                 })}
                             
-                     
+                      */}
             </div> 
 
             
