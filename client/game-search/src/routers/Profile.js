@@ -1,41 +1,20 @@
-import React, { useState, useEffect } from "react"
-import Form from "../Form"
-import axios from "axios"
+import React, {useState} from 'react'
+import App from '../App.js'
+import Suggested from './Suggested.js'
 
-
-function Profile(props){
-    const [games, setGames] = useState([])
-
-    //GET
-    function getGames(){
-      axios.get('/games',)
-          .then(res => setGames(res.data))
-          .catch(err => console.log(err))
-  }
-    //POST
-    function addGame(newGame){
-        axios.post(`/games`, newGame)
-            .then(res=> {
-                setGames(prev =>[...prev, newGame])
-            })
-            .catch(err => console.log(err))
-    }
-
-    useEffect(()=>{ 
-        getGames()
-     }, [])
-
+export default function Profile(props){
+    const faveGames = props.faveGames
     return(
         <div>
-            <Form />
-            {/* map through the saved items and display in list */}
-            <Form 
-                submit= {addGame}
-                btnText ="Search"
-            />
-     
+            <h1>Your Favorite Games List</h1>
+           {faveGames.map((item)=>( 
+                        <li key={item._id}>
+                            <h2>{item.title} </h2>
+                            <p>Players: {item.players}</p>
+                            <p>Category: {item.category}</p>
+                            <p>Console: {item.gameConsole}</p>
+                            <button onClick={()=>props.deleteFave(item._id)}>Delete From List</button>
+                        </li>)) }
         </div>
     )
 }
-
-export default Profile

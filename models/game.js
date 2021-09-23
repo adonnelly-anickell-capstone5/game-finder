@@ -11,14 +11,11 @@ const gameSchema = new Schema({
         type: Number,
         required: true
     },
-    price:{
-        type: Number,
-    },
     category:{
         type: String,
         enum: ['FPS','Cozy','MMORPG']
     },
-    console:{
+    gameConsole:{
          //could have more than one console per game----one game to many consoles data relationship
          type: String,
          enum: ['PS4','PS5','XBoxONE', 'XBoxX', 'PC','Nintendo Switch'],
