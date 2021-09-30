@@ -4,9 +4,28 @@ import Suggested from './Suggested.js'
 
 export default function Profile(props){
     const faveGames = props.faveGames
+    const games = props.games
+
+    console.log(games)
+    
+    const mappedGames = games.map((game) => {
+       return (
+           <div className="game-container">
+                <h2>{game.title}</h2>
+                <h3>Players: {game.players}</h3> 
+                <h3>Category: {game.category}</h3>
+                <h3>Console: {game.gameConsole}</h3>    
+                <h3>Rating: {game.rating}</h3>          
+           </div>
+           
+
+       )
+        console.log(game.title)
+       
+    })
     return(
         <div>
-            <h1>Your Favorite Games List</h1>
+            {/* <h1>Your Favorite Games List</h1>
            {faveGames.map((item)=>( 
                         <li key={item._id}>
                             <h2>{item.title} </h2>
@@ -14,7 +33,11 @@ export default function Profile(props){
                             <p>Category: {item.category}</p>
                             <p>Console: {item.gameConsole}</p>
                             <button onClick={()=>props.deleteFave(item._id)}>Delete From List</button>
-                        </li>)) }
+                        </li>)) } */}
+                        <h1>My Games</h1>
+                        <h2>{mappedGames}</h2>
+                        
         </div>
     )
 }
+
