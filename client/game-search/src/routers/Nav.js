@@ -4,8 +4,8 @@ import Profile from "./Profile"
 import Suggested from "./Suggested"
 
 
-export default function Nav(){
-
+export default function Nav(props){
+const games = props.games
     return(
 
         <div>
@@ -16,9 +16,10 @@ export default function Nav(){
             </nav>
 
             <Switch>
-             <Route exact path="/" ><Search /></Route>
+             <Route exact path="/" games={games} ><Search /></Route>
              <Route path="/suggested"><Suggested /></Route>
-             <Route path="/profile"> <Profile /></Route>
+             <Route path="/profile" component={props => (
+                <Profile {...props} games={games}/>)}></Route>
             </Switch>
             
             

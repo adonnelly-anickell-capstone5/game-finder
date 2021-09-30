@@ -1,10 +1,11 @@
 import React, { useState } from "react"
-import { usePopper } from 'react-popper';
+// import { usePopper } from 'react-popper';
 import axios from "axios"
 import zelda from "./images/zelda.png"
+import Nav from "./Nav"
 
 export default function Search(props) {
- 
+
     
     return (
         <div>
