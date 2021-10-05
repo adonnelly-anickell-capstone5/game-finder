@@ -5,7 +5,8 @@ import App from '../App.js'
 function Suggested(props){
     const [favorite, setFavorite] = useState(false);
     const {title, players, category, gameConsole, _id} = props
-
+    const myGames = props.games
+    console.log(myGames)
     //fake games data for testing
     const games = [{ _id: 1, title:"Legend of zelda: Ocarina of Time", players: 1, category: "rpg", gameConsole: ["N64"]}, { _id:2, title: "Call of Duty"}]
     let faveGames = []
@@ -18,8 +19,13 @@ function Suggested(props){
     }
         return(
             <div>
+                
 
-                <Form/>
+
+
+
+
+                {/* <Form/>
                     <h1>Suggested Games</h1> 
                     <ul>
                         {games.map((item, index)=>( 
@@ -34,7 +40,7 @@ function Suggested(props){
                             </button> 
                         </li>)) }
                            
-                    </ul>
+                    </ul> */}
             </div> 
 
             

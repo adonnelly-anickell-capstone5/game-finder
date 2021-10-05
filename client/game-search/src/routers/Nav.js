@@ -16,8 +16,10 @@ const games = props.games
             </nav>
 
             <Switch>
-             <Route exact path="/" games={games} ><Search /></Route>
-             <Route path="/suggested"><Suggested /></Route>
+             <Route exact path="/" component={props => (
+                 <Search {...props} games={games}/>)}></Route>
+             <Route path="/suggested" component={props => (
+                 <Suggested {...props} games={games}/>)}></Route>
              <Route path="/profile" component={props => (
                 <Profile {...props} games={games}/>)}></Route>
             </Switch>
