@@ -54,18 +54,18 @@ a:link {
     margin: auto;
 }
 
-.button-sort {
+.dropdown-sort {
     position: absolute;
     margin-left: auto;
     margin-right: auto;
-    /* top: 1000px; */
+    top: 1255px;
     /* height: 75%; */
     left: 0;
     right: 0;
     align-content: center;
 }
 
-.button-sort button {
+.dropdown-sort select {
     padding: 10px;
     margin: 10px;
     font-family: 'Press Start 2P', cursive;
@@ -76,6 +76,7 @@ a:link {
 h1 {
   color: white;
   font-family: 'Press Start 2P', cursive;
+  margin: 20px;
 }
 
 h2 {
@@ -92,4 +93,5 @@ h2 {
   width: 50%;
   margin: auto;
   margin-top: 10px;
+  color: white;
 }
