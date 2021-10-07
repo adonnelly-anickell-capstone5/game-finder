@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
-import App from '../App.js'
-import Suggested from './Suggested.js'
+import NewGame from "./NewGame"
+
 
 export default function Profile(props){
     const faveGames = props.faveGames
@@ -10,7 +10,7 @@ export default function Profile(props){
     
     const mappedGames = games.map((game) => {
        return (
-           <div className="game-container">
+           <div className="game-box">
                 <h2>{game.title}</h2>
                 <h3>Players: {game.players}</h3> 
                 <h3>Category: {game.category}</h3>
@@ -24,8 +24,18 @@ export default function Profile(props){
        
     })
     return(
-        <div>
-            {/* <h1>Your Favorite Games List</h1>
+        <div className="profile-container">
+            <NewGame />
+           <div className="game-container">
+                <h1 id="my-game-title">My Games</h1>
+                <h2>{mappedGames}</h2>
+           </div>             
+        </div>
+    )
+}
+
+
+ {/* <h1>Your Favorite Games List</h1>
            {faveGames.map((item)=>( 
                         <li key={item._id}>
                             <h2>{item.title} </h2>
@@ -34,10 +44,3 @@ export default function Profile(props){
                             <p>Console: {item.gameConsole}</p>
                             <button onClick={()=>props.deleteFave(item._id)}>Delete From List</button>
                         </li>)) } */}
-                        <h1>My Games</h1>
-                        <h2>{mappedGames}</h2>
-                        
-        </div>
-    )
-}
-

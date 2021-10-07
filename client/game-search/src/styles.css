@@ -6,14 +6,12 @@ body {
  text-align: center;
 }
 
-
 nav {
     font-family: 'Press Start 2P', cursive;
     background-color: black;
     display: flex;
     justify-content: space-between;
 }
-
 
 /* unvisited link */
 a:link {
@@ -59,7 +57,6 @@ a:link {
     margin-left: auto;
     margin-right: auto;
     top: 1255px;
-    /* height: 75%; */
     left: 0;
     right: 0;
     align-content: center;
@@ -85,13 +82,61 @@ h2 {
   font-size: 40px;
 }
 
-.game-container {
+.game-box {
   display: flex;
   flex-direction: column;
   border: 2px solid white;
   flex-wrap: wrap;
-  width: 50%;
+  width: 75%;
   margin: auto;
   margin-top: 10px;
+  color: white;
+}
+
+.profile-container {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  justify-content: center;
+
+}
+
+.form-container {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  align-content: center;
+  width: 50%;
+  display: inline-block;
+
+}
+
+.game-container {
+  margin-left: auto;
+  margin-right: auto;
+  align-content: center;
+  display: inline-block;
+  width: 50%;
+
+}
+
+/* #my-game-title {
+  width: 300px;
+} */
+
+.new-game {
+  margin-left: auto;
+  margin-right: auto;
+  align-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.new-game select {
+  padding: 10px;
+  margin: 10px;
+  font-family: 'Press Start 2P', cursive;
+  background-color: #4241FE;
   color: white;
 }
