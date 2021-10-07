@@ -12,7 +12,7 @@ export default function Filters(props) {
         return games.players === Number(dropValue)
     }).map(games => {  
         return (
-                <div className="game-container">
+                <div className="game-box">
                     <h2>{games.title}</h2>
                     <h3>Players: {games.players}</h3> 
                     <h3>Category: {games.category}</h3>
@@ -26,7 +26,7 @@ export default function Filters(props) {
         return games.category === dropValue
     }).map(games => {  
         return (
-                <div className="game-container">
+                <div className="game-box">
                     <h2>{games.title}</h2>
                     <h3>Players: {games.players}</h3> 
                     <h3>Category: {games.category}</h3>
@@ -40,7 +40,7 @@ export default function Filters(props) {
         return games.gameConsole === dropValue
     }).map(games => {  
         return (
-                <div className="game-container">
+                <div className="game-box">
                     <h2>{games.title}</h2>
                     <h3>Players: {games.players}</h3> 
                     <h3>Category: {games.category}</h3>
@@ -54,7 +54,7 @@ export default function Filters(props) {
         return a.rating - b.rating
     }).map(games => {  
         return (
-                <div className="game-container">
+                <div className="game-box">
                     <h2>{games.title}</h2>
                     <h3>Players: {games.players}</h3> 
                     <h3>Category: {games.category}</h3>
@@ -68,7 +68,7 @@ export default function Filters(props) {
         return b.rating - a.rating
     }).map(games => {  
         return (
-                <div className="game-container">
+                <div className="game-box">
                     <h2>{games.title}</h2>
                     <h3>Players: {games.players}</h3> 
                     <h3>Category: {games.category}</h3>

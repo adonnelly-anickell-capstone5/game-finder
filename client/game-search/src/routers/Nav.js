@@ -10,9 +10,9 @@ const games = props.games
 
         <div>
             <nav>
-            <Link to="/">Choose Filters</Link>
-            <Link to="/Suggested">Suggested Games</Link>
-            <Link to="/Profile">My Profile</Link>
+            <Link to="/">Choose Game</Link>
+            <Link to="/Suggested">My Favorites</Link>
+            <Link to="/Profile">User Profile</Link>
             </nav>
 
             <Switch>

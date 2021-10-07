@@ -11,9 +11,9 @@ export default function Search(props) {
     const executeScroll = () => scrollToRef(myRef)
     
     const handleSelect = (e) => {
+        executeScroll()
         console.log(e.target.value)
         setDropValue(e.target.value)
-        executeScroll()
       }
 
     return (
@@ -23,9 +23,9 @@ export default function Search(props) {
                 <div className="dropdown-sort">
                     <select name="playerList" id="playerList"  onChange={handleSelect}>        
                         <option> Sort by Player</option>       
-                        <option value={1}> 1 Player</option>
-                        <option value={2}> 2 Players</option>
-                        <option value={3}> 3 Players</option>
+                        <option value="1"> 1 Player</option>
+                        <option value="2"> 2 Players</option>
+                        <option value="3"> 3 Players</option>
                         <option value="4+" > 4+ Players</option>
                     </select>
                     <select name="categoryList" id="categoryList" onChange={handleSelect}>        
