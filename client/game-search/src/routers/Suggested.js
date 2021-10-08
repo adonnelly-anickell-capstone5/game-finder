@@ -19,11 +19,6 @@ function Suggested(props){
     }
         return(
             <div>
-                
-
-
-
-
 
                 {/* <Form/>
                     <h1>Suggested Games</h1> 
