@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react'
 import Nav from "../src/routers/Nav"
-import Form from "./Form"
 import axios from "axios"
 
 export default function App(props){
@@ -14,10 +13,10 @@ export default function App(props){
               .catch(err => console.log(err))
       }
         //POST
-        function addGame(newGame){
-            axios.post(`/games`, newGame)
+        function addGame(inputs){
+            axios.post(`/games`, inputs)
                 .then(res=> {
-                    setGames(prev =>[...prev, newGame])
+                    setGames(prev =>[...prev, inputs])
                 })
                 .catch(err => console.log(err))
         }
@@ -38,7 +37,7 @@ export default function App(props){
     
         return(
             <div>
-                <Nav games={games}/>
+                <Nav games={games} setGames={setGames}/>
                 {/* <Suggested submit = {addGame}/> */}
                
             </div>

@@ -2,7 +2,6 @@
 
 body {
  background-color: black;
- text-transform: uppercase;
  text-align: center;
 }
 
@@ -11,6 +10,7 @@ nav {
     background-color: black;
     display: flex;
     justify-content: space-between;
+    text-transform: uppercase;
 }
 
 /* unvisited link */
@@ -74,6 +74,7 @@ h1 {
   color: white;
   font-family: 'Press Start 2P', cursive;
   margin: 20px;
+  text-transform: uppercase;
 }
 
 h2 {
@@ -85,7 +86,7 @@ h2 {
 .game-box {
   display: flex;
   flex-direction: column;
-  border: 2px solid white;
+  border: 3px solid  #4241FE;
   flex-wrap: wrap;
   width: 75%;
   margin: auto;
@@ -97,7 +98,6 @@ h2 {
   display: flex;
   margin-left: auto;
   margin-right: auto;
-  width: 50%;
   justify-content: center;
 
 }
@@ -121,22 +121,45 @@ h2 {
 
 }
 
-/* #my-game-title {
-  width: 300px;
-} */
-
 .new-game {
   margin-left: auto;
   margin-right: auto;
   align-content: center;
   display: flex;
   flex-direction: column;
+  width: 90%;
+  flex-wrap: wrap;
 }
 
-.new-game select {
+.new-game select, button, input, ::placeholder {
   padding: 10px;
-  margin: 10px;
+  margin: 20px;
   font-family: 'Press Start 2P', cursive;
   background-color: #4241FE;
   color: white;
+  text-align: center;
 }
+
+input:focus, select:focus {
+  outline: none !important;
+  border:1px solid #B53220;
+  box-shadow: 0 0 10px #719ECE;
+}
+
+.checkbox {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+}
+
+.checkbox input {
+    width: 30px;
+    height: 30px;
+  }
+
+  .checkbox label {
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+    font-size: 30px;
+  }

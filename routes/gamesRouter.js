@@ -1,4 +1,5 @@
 const express = require("express") 
+const app = express()
 const gamesRouter = express.Router()
 const Game = require('../models/game.js')
 
