@@ -1,16 +1,17 @@
-import e from 'express'
+// import e from 'express'
 import React, {useState} from 'react'
+import axios from "axios"
+
 
 export default function NewGame(props){
-    const addGame = props.addGame
     const initInputs = {
-        title: props.title || "", 
-        players: props.players || "",
-        category: props.category || "",
-        console: props.console || "",
-        rating: props.rating || ""
+        title: "", 
+        players: "",
+        category: "",
+        gameConsole: "",
+        rating: ""
     }
-
+    const setGames = props.setGames
     const [inputs, setInputs] = useState(initInputs)
 
     function handleChange(e){
@@ -21,7 +22,14 @@ export default function NewGame(props){
             })
         })
     }
-
+    //POST
+    function addGame(inputs){
+    axios.post(`/games`, inputs)
+        .then(res=> {
+            setGames(prev =>[...prev, inputs])
+        })
+        .catch(err => console.log(err))
+    }
     function handleSubmit(e){
         e.preventDefault()
         console.log(inputs)
@@ -70,15 +78,15 @@ export default function NewGame(props){
                 <h2>Consoles:</h2>
                 <div className="checkbox">
                     <label for="PC">PC</label>
-                    <input type="checkbox" id="PC" name="PC" value={inputs.console} text="PC"/>
+                    <input type="checkbox" id="PC" name="PC" value={inputs.gameConsole} text="PC"/>
                     <label for="PS4">PS 4</label>
-                    <input type="checkbox" id="PS4" name="PS4" value={inputs.console}/>
+                    <input type="checkbox" id="PS4" name="PS4" value={inputs.gameConsole}/>
                     <label for="PS5">PS 5</label>
-                    <input type="checkbox" id="PS5" name="PS5" value={inputs.console}/>
+                    <input type="checkbox" id="PS5" name="PS5" value={inputs.gameConsole}/>
                     <label for="XBoxONE">XBox One</label>
-                    <input type="checkbox" id="XBoxONE" name="XBoxONE" value={inputs.console}/>
+                    <input type="checkbox" id="XBoxONE" name="XBoxONE" value={inputs.gameConsole}/>
                     <label for="XBoxX">XBox X</label>
-                    <input type="checkbox" id="XBoxX" name="XBoxX" value={inputs.console}/>
+                    <input type="checkbox" id="XBoxX" name="XBoxX" value={inputs.gameConsole}/>
                 </div>   
                     
                 <button>Submit</button>      

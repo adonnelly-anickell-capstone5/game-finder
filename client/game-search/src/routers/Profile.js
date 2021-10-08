@@ -6,7 +6,8 @@ import Border from "./images/border.png"
 export default function Profile(props){
     const faveGames = props.faveGames
     const games = props.games
-    const addGame = props.addGame
+    const setGames = props.setGames
+  
 
     console.log(games)
     
@@ -29,11 +30,11 @@ export default function Profile(props){
         <div>
             <img className="zelda-img" src={Border}></img>
             <div className="profile-container">
-            <NewGame addGame={addGame}/>
-            <div className="game-container">
-                <h1 id="my-game-title">My Games</h1>
-                <h2>{mappedGames}</h2>
-           </div>             
+            <NewGame setGames={setGames} />
+                <div className="game-container">
+                    <h1 id="my-game-title">My Games</h1>
+                    <h2>{mappedGames}</h2>
+                </div>             
             </div>
         </div>
         

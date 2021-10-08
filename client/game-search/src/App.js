@@ -37,7 +37,7 @@ export default function App(props){
     
         return(
             <div>
-                <Nav games={games} addGame={addGame()}/>
+                <Nav games={games} setGames={setGames}/>
                 {/* <Suggested submit = {addGame}/> */}
                
             </div>

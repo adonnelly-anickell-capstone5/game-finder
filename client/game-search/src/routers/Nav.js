@@ -6,7 +6,8 @@ import Suggested from "./Suggested"
 
 export default function Nav(props){
 const games = props.games
-const addGame = props.addGame
+const setGames = props.setGames
+
     return(
 
         <div>
@@ -22,7 +23,7 @@ const addGame = props.addGame
              <Route path="/suggested" component={props => (
                  <Suggested {...props} games={games}/>)}></Route>
              <Route path="/profile" component={props => (
-                <Profile {...props} games={games} addGame={addGame()}/>)}></Route>
+                <Profile {...props} games={games} setGames={setGames} />)}></Route>
             </Switch>
             
             
