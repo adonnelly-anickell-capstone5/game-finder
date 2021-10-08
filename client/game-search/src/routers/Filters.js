@@ -14,10 +14,10 @@ export default function Filters(props) {
         return (
                 <div className="game-box">
                     <h2>{games.title}</h2>
-                    <h3>Players: {games.players}</h3> 
-                    <h3>Category: {games.category}</h3>
-                    <h3>Console: {games.gameConsole}</h3>    
-                    <h3>Rating: {games.rating}</h3>          
+                    <h2>Players: {games.players}</h2> 
+                    <h2>Category: {games.category}</h2>
+                    <h2>Console: {games.gameConsole}</h2>    
+                    <h2>Rating: {games.rating}</h2>          
                 </div>
         )}
     )
@@ -28,10 +28,10 @@ export default function Filters(props) {
         return (
                 <div className="game-box">
                     <h2>{games.title}</h2>
-                    <h3>Players: {games.players}</h3> 
-                    <h3>Category: {games.category}</h3>
-                    <h3>Console: {games.gameConsole}</h3>    
-                    <h3>Rating: {games.rating}</h3>          
+                    <h2>Players: {games.players}</h2> 
+                    <h2>Category: {games.category}</h2>
+                    <h2>Console: {games.gameConsole}</h2>    
+                    <h2>Rating: {games.rating}</h2>          
                 </div>
         )}
     )
@@ -42,10 +42,10 @@ export default function Filters(props) {
         return (
                 <div className="game-box">
                     <h2>{games.title}</h2>
-                    <h3>Players: {games.players}</h3> 
-                    <h3>Category: {games.category}</h3>
-                    <h3>Console: {games.gameConsole}</h3>    
-                    <h3>Rating: {games.rating}</h3>          
+                    <h2>Players: {games.players}</h2> 
+                    <h2>Category: {games.category}</h2>
+                    <h2>Console: {games.gameConsole}</h2>    
+                    <h2>Rating: {games.rating}</h2>          
                 </div>
         )}
     )
@@ -56,10 +56,10 @@ export default function Filters(props) {
         return (
                 <div className="game-box">
                     <h2>{games.title}</h2>
-                    <h3>Players: {games.players}</h3> 
-                    <h3>Category: {games.category}</h3>
-                    <h3>Console: {games.gameConsole}</h3>    
-                    <h3>Rating: {games.rating}</h3>          
+                    <h2>Players: {games.players}</h2> 
+                    <h2>Category: {games.category}</h2>
+                    <h2>Console: {games.gameConsole}</h2>    
+                    <h2>Rating: {games.rating}</h2>          
                 </div>
         )}
     )
@@ -70,10 +70,10 @@ export default function Filters(props) {
         return (
                 <div className="game-box">
                     <h2>{games.title}</h2>
-                    <h3>Players: {games.players}</h3> 
-                    <h3>Category: {games.category}</h3>
-                    <h3>Console: {games.gameConsole}</h3>    
-                    <h3>Rating: {games.rating}</h3>          
+                    <h2>Players: {games.players}</h2> 
+                    <h2>Category: {games.category}</h2>
+                    <h2>Console: {games.gameConsole}</h2>    
+                    <h2>Rating: {games.rating}</h2>          
                 </div>
         )}
     )
