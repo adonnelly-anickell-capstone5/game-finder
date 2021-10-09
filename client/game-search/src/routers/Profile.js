@@ -6,10 +6,8 @@ import Border from "./images/border.png"
 
 
 export default function Profile(props){
-    const faveGames = props.faveGames
     const games = props.games
     const setGames = props.setGames
-  
 
     console.log(games)
     
@@ -29,6 +27,8 @@ export default function Profile(props){
         console.log(game.title)
        
     })
+
+
     return(
         <div>
             <img className="zelda-img" src={Border}></img>
@@ -45,14 +45,5 @@ export default function Profile(props){
 }
 
 
-//   <h1>Your Favorite Games List</h1>
-//            {faveGames.map((item)=>( 
-//                         <li key={item._id}>
-//                             <h2>{item.title} </h2>
-//                             <p>Players: {item.players}</p>
-//                             <p>Category: {item.category}</p>
-//                             <p>Console: {item.gameConsole}</p>
-//                             <button onClick={()=>props.deleteFave(item._id)}>Delete From List</button>
-//                         </li>)) } 
 
 
