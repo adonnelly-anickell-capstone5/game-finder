@@ -10,7 +10,7 @@ gamesRouter.get('/',(req,res,next)=>{
             res.status(500)
             return next(err)
         }
-        return res.status(201).send(games)
+        return res.status(200).send(games)
     })
 })
 
@@ -21,6 +21,7 @@ gamesRouter.get('/',(req,res,next)=>{
 gamesRouter.post( "/", (req, res, next)=>{
     const newGame =  new Game(req.body)
     newGame.save((err, savedGame)=>{
+        console.log(req.body)
         if(err){
             res.status(500)
             return next(err)

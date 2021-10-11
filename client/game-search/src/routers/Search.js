@@ -15,6 +15,8 @@ export default function Search(props) {
         console.log(e.target.value)
         setDropValue(e.target.value)
       }
+    
+    console.log(`The current value is ${dropValue}`)
 
     return (
         <div>

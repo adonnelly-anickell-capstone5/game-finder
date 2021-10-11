@@ -13,8 +13,8 @@ export default function Profile(props){
     
     const mappedGames = games.map((game) => {
        return (
-           <div className="game-box">
-                <h2>{game.title}</h2>
+           <div key={game._id} className="game-box">
+                <h2 >{game.title}</h2>
                 <h3>Players: {game.players}</h3> 
                 <h3>Category: {game.category}</h3>
                 <h3>Console: {game.gameConsole}</h3>    
