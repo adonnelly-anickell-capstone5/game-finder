@@ -1,4 +1,3 @@
-// import e from 'express'
 import React, {useState} from 'react'
 import axios from "axios"
 
@@ -22,19 +21,19 @@ export default function NewGame(props){
             })
         })
     }
-    //POST
-    function addGame(inputs){
+    
+    function addGame(){
     axios.post(`/games`, inputs)
         .then(res=> {
             setGames(prev =>[...prev, inputs])
         })
         .catch(err => console.log(err))
     }
+
     function handleSubmit(e){
         e.preventDefault()
         console.log(inputs)
         addGame(inputs)
-        console.log("successfully added... maybe")
         setInputs(prevState => {
             return ({
                 ...prevState,
@@ -67,7 +66,7 @@ export default function NewGame(props){
                     <option value="Cozy">Cozy</option>
                     <option value="MMORPG">MMORPG</option>
                 </select>
-                <select name="rating" id="rating" value={inputs.value} onChange={handleChange}>        
+                <select name="rating" id="rating" value={inputs.rating} onChange={handleChange}>        
                     <option> Rate It</option>       
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -76,7 +75,7 @@ export default function NewGame(props){
                     <option value="5">5</option>
                 </select>  
                 <h2>Consoles:</h2>
-                <div className="checkbox">
+                {/* <div className="checkbox">
                     <label for="PC">PC</label>
                     <input type="checkbox" id="PC" name="PC" value={inputs.gameConsole} text="PC"/>
                     <label for="PS4">PS 4</label>
@@ -87,8 +86,7 @@ export default function NewGame(props){
                     <input type="checkbox" id="XBoxONE" name="XBoxONE" value={inputs.gameConsole}/>
                     <label for="XBoxX">XBox X</label>
                     <input type="checkbox" id="XBoxX" name="XBoxX" value={inputs.gameConsole}/>
-                </div>   
-                    
+                </div>    */}
                 <button>Submit</button>      
             </div>
         </form>

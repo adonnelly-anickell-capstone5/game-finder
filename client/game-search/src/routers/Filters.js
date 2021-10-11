@@ -9,10 +9,10 @@ export default function Filters(props) {
         if (dropValue === "4+" && games.players >= 4) {
             return true
         } 
-        return games.players === Number(dropValue)
+        return games.players === (dropValue)
     }).map(games => {  
         return (
-                <div className="game-box">
+                <div className="game-box" key={games._id} >
                     <h2>{games.title}</h2>
                     <h2>Players: {games.players}</h2> 
                     <h2>Category: {games.category}</h2>
@@ -26,7 +26,7 @@ export default function Filters(props) {
         return games.category === dropValue
     }).map(games => {  
         return (
-                <div className="game-box">
+                <div className="game-box" key={games._id} >
                     <h2>{games.title}</h2>
                     <h2>Players: {games.players}</h2> 
                     <h2>Category: {games.category}</h2>
@@ -40,7 +40,7 @@ export default function Filters(props) {
         return games.gameConsole === dropValue
     }).map(games => {  
         return (
-                <div className="game-box">
+                <div className="game-box" key={games._id} >
                     <h2>{games.title}</h2>
                     <h2>Players: {games.players}</h2> 
                     <h2>Category: {games.category}</h2>
@@ -54,7 +54,7 @@ export default function Filters(props) {
         return a.rating - b.rating
     }).map(games => {  
         return (
-                <div className="game-box">
+                <div className="game-box" key={games._id} >
                     <h2>{games.title}</h2>
                     <h2>Players: {games.players}</h2> 
                     <h2>Category: {games.category}</h2>
@@ -68,7 +68,7 @@ export default function Filters(props) {
         return b.rating - a.rating
     }).map(games => {  
         return (
-                <div className="game-box">
+                <div className="game-box" key={games._id} >
                     <h2>{games.title}</h2>
                     <h2>Players: {games.players}</h2> 
                     <h2>Category: {games.category}</h2>
@@ -78,10 +78,27 @@ export default function Filters(props) {
         )}
     )
 
+    // if (dropValue === "1" || "2" || "3" || "4" || "5" || "6" || "7" || "8" || "9") {
+    //     return (
+    //        players
+    //     )} 
+        
+    // if (dropValue === "Cozy" || "MMORPG" || "FPS") {
+    //     return (
+    //         category
+    //     )} 
+            
+    // if(dropValue === 'PS4' || 'PS5' || 'XBoxONE' ||  'XBoxX' ||  'PC' || 'Nintendo Switch') {
+    //     return (
+    //         console
+    //     )} 
+        
+  
+
     return (
-        //conditional rendering based on which dropdown was selected below
+        
         <div>
-            {players}
+           
         </div>
     )
 }
