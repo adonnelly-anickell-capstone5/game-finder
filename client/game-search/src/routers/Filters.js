@@ -4,8 +4,9 @@ import React from "react"
 export default function Filters(props) {
     const games = props.games
     const dropValue = props.dropValue
-    
-    const players = games.filter(games => {
+    let display = {}
+
+    let players = games.filter(games => {
         if (dropValue === "4+" && games.players >= 4) {
             return true
         } 
@@ -22,7 +23,7 @@ export default function Filters(props) {
         )}
     )
 
-    const category = games.filter(games => {
+    let category = games.filter(games => {
         return games.category === dropValue
     }).map(games => {  
         return (
@@ -36,7 +37,7 @@ export default function Filters(props) {
         )}
     )
 
-    const console = games.filter(games => {
+    let console = games.filter(games => {
         return games.gameConsole === dropValue
     }).map(games => {  
         return (
@@ -50,7 +51,7 @@ export default function Filters(props) {
         )}
     )
 
-    const lowHighRatings = games.sort((a, b) => {
+    let lowHighRatings = games.sort((a, b) => {
         return a.rating - b.rating
     }).map(games => {  
         return (
@@ -64,7 +65,7 @@ export default function Filters(props) {
         )}
     )
 
-    const highLowRatings = games.sort((a, b) => {
+  let highLowRatings = games.sort((a, b) => {
         return b.rating - a.rating
     }).map(games => {  
         return (
@@ -77,28 +78,23 @@ export default function Filters(props) {
                 </div>
         )}
     )
-
-    // if (dropValue === "1" || "2" || "3" || "4" || "5" || "6" || "7" || "8" || "9") {
-    //     return (
-    //        players
-    //     )} 
-        
-    // if (dropValue === "Cozy" || "MMORPG" || "FPS") {
-    //     return (
-    //         category
-    //     )} 
-            
-    // if(dropValue === 'PS4' || 'PS5' || 'XBoxONE' ||  'XBoxX' ||  'PC' || 'Nintendo Switch') {
-    //     return (
-    //         console
-    //     )} 
-        
-  
-
-    return (
-        
+ 
+    switch(dropValue) {
+        case "1" || "2" || "3" || "4" || "5" || "6" || "7" || "8" || "9" :
+            display = players
+        break;
+        case "Cozy" || "MMORPG" || "FPS" :
+            display = category
+        break;
+        case 'PS4' || 'PS5' || 'XBoxONE' ||  'XBoxX' ||  'PC' || 'Nintendo Switch' :
+            display = console
+        default:
+        display = players
+    }
+     
+    return (  
         <div>
-           
+           {display}
         </div>
     )
 }

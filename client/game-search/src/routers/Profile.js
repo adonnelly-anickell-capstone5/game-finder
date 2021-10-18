@@ -7,8 +7,7 @@ export default function Profile(props){
     const faveGames = props.faveGames
     const games = props.games
     const setGames = props.setGames
-  
-
+    
     console.log(games)
     
     const mappedGames = games.map((game) => {
@@ -23,10 +22,9 @@ export default function Profile(props){
            
 
        )
-        console.log(game.title)
-       
     })
-    return(
+
+    return (
         <div>
             <img className="zelda-img" src={Border}></img>
             <div className="profile-container">
