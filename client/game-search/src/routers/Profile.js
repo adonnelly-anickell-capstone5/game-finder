@@ -19,7 +19,7 @@ export default function Profile(props){
                 <h3>Category: {game.category}</h3>
                 <h3>Console: {game.gameConsole.join(', ')}</h3>    
                 <h3>Rating: {game.rating}</h3> 
-                <button onClick={()=>props.deleteFave(game._id)}>Delete From List</button>         
+                <button onClick={()=>props.handleToggle(game._id)}>{}Delete From List</button>         
            </div>
        )
     })
