@@ -6,7 +6,6 @@ const mongoose = require('mongoose')
 app.use(express.json()) 
 app.use(morgan('dev'))
 
-
 //Routes//
 app.use("/games", require("./routes/gamesRouter.js"))
 
