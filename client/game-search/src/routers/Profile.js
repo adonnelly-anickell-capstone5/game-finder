@@ -8,7 +8,7 @@ import Border from "./images/border.png"
 export default function Profile(props){
     const games = props.games
     const setGames = props.setGames
-
+    
     console.log(games)
     
     const mappedGames = games.map((game) => {
@@ -17,19 +17,14 @@ export default function Profile(props){
                 <h2 >{game.title}</h2>
                 <h3>Players: {game.players}</h3> 
                 <h3>Category: {game.category}</h3>
-                <h3>Console: {game.gameConsole}</h3>    
+                <h3>Console: {game.gameConsole.join(', ')}</h3>    
                 <h3>Rating: {game.rating}</h3> 
                 <button onClick={()=>props.handleToggle(game._id)}>{}Delete From List</button>         
            </div>
-           
-
        )
-        console.log(game.title)
-       
     })
 
-
-    return(
+    return (
         <div>
             <img className="zelda-img" src={Border}></img>
             <div className="profile-container">
@@ -43,6 +38,7 @@ export default function Profile(props){
         
     )
 }
+
 
 
 

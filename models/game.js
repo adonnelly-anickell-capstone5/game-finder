@@ -9,13 +9,14 @@ const gameSchema = new Schema({
     },
     players:{
         type: String,
-        required: true
     },
     category:{
         type: String,
         enum: ['FPS','Cozy','MMORPG']
     },
-  
+    gameConsole:{
+        type: Array
+    },
     rating:{
         type: String,
         enum: [1,2,3,4,5],
@@ -25,6 +26,7 @@ const gameSchema = new Schema({
         type: Boolean,
         default: false,
         required: true
+
     }
 
 })
@@ -32,9 +34,3 @@ const gameSchema = new Schema({
 module.exports = mongoose.model("Game", gameSchema) 
 
 
-// gameConsole:{
-//     //could have more than one console per game----one game to many consoles data relationship
-//     type: String,
-//     enum: ['PS4','PS5','XBoxONE', 'XBoxX', 'PC','Nintendo Switch'],
-    
-// },

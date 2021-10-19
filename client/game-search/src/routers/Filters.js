@@ -4,8 +4,9 @@ import React from "react"
 export default function Filters(props) {
     const games = props.games
     const dropValue = props.dropValue
-    
-    const players = games.filter(games => {
+    let display = {}
+
+    let players = games.filter(games => {
         if (dropValue === "4+" && games.players >= 4) {
             return true
         } 
@@ -16,13 +17,13 @@ export default function Filters(props) {
                     <h2>{games.title}</h2>
                     <h2>Players: {games.players}</h2> 
                     <h2>Category: {games.category}</h2>
-                    <h2>Console: {games.gameConsole}</h2>    
+                    <h2>Console: {games.gameConsole.join(', ')}</h2>    
                     <h2>Rating: {games.rating}</h2>          
                 </div>
         )}
     )
 
-    const category = games.filter(games => {
+    let category = games.filter(games => {
         return games.category === dropValue
     }).map(games => {  
         return (
@@ -30,13 +31,13 @@ export default function Filters(props) {
                     <h2>{games.title}</h2>
                     <h2>Players: {games.players}</h2> 
                     <h2>Category: {games.category}</h2>
-                    <h2>Console: {games.gameConsole}</h2>    
+                    <h2>Console: {games.gameConsole.join(', ')}</h2>    
                     <h2>Rating: {games.rating}</h2>          
                 </div>
         )}
     )
 
-    const console = games.filter(games => {
+    let console = games.filter(games => {
         return games.gameConsole === dropValue
     }).map(games => {  
         return (
@@ -44,13 +45,13 @@ export default function Filters(props) {
                     <h2>{games.title}</h2>
                     <h2>Players: {games.players}</h2> 
                     <h2>Category: {games.category}</h2>
-                    <h2>Console: {games.gameConsole}</h2>    
+                    <h2>Console: {games.gameConsole.join(', ')}</h2>    
                     <h2>Rating: {games.rating}</h2>          
                 </div>
         )}
     )
 
-    const lowHighRatings = games.sort((a, b) => {
+    let lowHighRatings = games.sort((a, b) => {
         return a.rating - b.rating
     }).map(games => {  
         return (
@@ -58,13 +59,13 @@ export default function Filters(props) {
                     <h2>{games.title}</h2>
                     <h2>Players: {games.players}</h2> 
                     <h2>Category: {games.category}</h2>
-                    <h2>Console: {games.gameConsole}</h2>    
+                    <h2>Console: {games.gameConsole.join(', ')}</h2>    
                     <h2>Rating: {games.rating}</h2>          
                 </div>
         )}
     )
 
-    const highLowRatings = games.sort((a, b) => {
+  let highLowRatings = games.sort((a, b) => {
         return b.rating - a.rating
     }).map(games => {  
         return (
@@ -72,33 +73,50 @@ export default function Filters(props) {
                     <h2>{games.title}</h2>
                     <h2>Players: {games.players}</h2> 
                     <h2>Category: {games.category}</h2>
-                    <h2>Console: {games.gameConsole}</h2>    
+                    <h2>Console: {games.gameConsole.join(', ')}</h2>    
                     <h2>Rating: {games.rating}</h2>          
                 </div>
         )}
     )
-
-    // if (dropValue === "1" || "2" || "3" || "4" || "5" || "6" || "7" || "8" || "9") {
-    //     return (
-    //        players
-    //     )} 
-        
-    // if (dropValue === "Cozy" || "MMORPG" || "FPS") {
-    //     return (
-    //         category
-    //     )} 
-            
-    // if(dropValue === 'PS4' || 'PS5' || 'XBoxONE' ||  'XBoxX' ||  'PC' || 'Nintendo Switch') {
-    //     return (
-    //         console
-    //     )} 
-        
-  
-
-    return (
-        
+ 
+    switch(dropValue) {
+        case "1":
+        case "2":
+        case "3":
+        case "4":
+        case "5": 
+        case "6": 
+        case "7":
+        case "8":
+        case "9":
+            display = players
+            break;
+        case "Cozy":
+        case "MMORPG":
+        case "FPS":
+            display = category
+            break;
+        case "high to low":
+            display = highLowRatings
+            break;
+        case "low to high":
+            display = lowHighRatings
+            break;
+        case "PS4":
+        case "PS5":
+        case "XBoxONE":
+        case "XBoxX":
+        case "PC":
+        case "Nintendo Switch":
+            display = console
+        break;
+        default:
+        display = players
+    }
+     
+    return (  
         <div>
-           
+           {display}
         </div>
     )
 }

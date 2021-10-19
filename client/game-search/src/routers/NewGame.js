@@ -7,11 +7,16 @@ export default function NewGame(props){
         title: "", 
         players: "",
         category: "",
-        gameConsole: "",
+        gameConsole: [],
         rating: ""
     }
     const setGames = props.setGames
     const [inputs, setInputs] = useState(initInputs)
+    const checkPC = document.getElementById("PC")
+    const checkPS4 = document.getElementById("PS4")
+    const checkPS5 = document.getElementById("PS5")
+    const checkXBoxONE = document.getElementById("XBoxONE")
+    const checkXBoxX = document.getElementById("XBoxX")
 
     function handleChange(e){
         setInputs(prevState => {
@@ -23,11 +28,11 @@ export default function NewGame(props){
     }
     
     function addGame(){
-    axios.post(`/games`, inputs)
-        .then(res=> {
-            setGames(prev =>[...prev, inputs])
-        })
-        .catch(err => console.log(err))
+        axios.post(`/games`, inputs)
+            .then(res=> {
+                setGames(prev =>[...prev, inputs])
+            })
+            .catch(err => console.log(err))
     }
 
     function handleSubmit(e){
@@ -42,8 +47,8 @@ export default function NewGame(props){
         })
     }
 
-    return(
-        <form  className="form-container" onSubmit= {handleSubmit}>
+    return (
+        <form  className="form-container" onSubmit= {handleSubmit} autoComplete="off">
             <div className="new-game">
                 <h1>Add New Game</h1>
                 <input
@@ -75,18 +80,48 @@ export default function NewGame(props){
                     <option value="5">5</option>
                 </select>  
                 <h2>Consoles:</h2>
-                {/* <div className="checkbox">
-                    <label for="PC">PC</label>
-                    <input type="checkbox" id="PC" name="PC" value={inputs.gameConsole} text="PC"/>
-                    <label for="PS4">PS 4</label>
-                    <input type="checkbox" id="PS4" name="PS4" value={inputs.gameConsole}/>
-                    <label for="PS5">PS 5</label>
-                    <input type="checkbox" id="PS5" name="PS5" value={inputs.gameConsole}/>
-                    <label for="XBoxONE">XBox One</label>
-                    <input type="checkbox" id="XBoxONE" name="XBoxONE" value={inputs.gameConsole}/>
-                    <label for="XBoxX">XBox X</label>
-                    <input type="checkbox" id="XBoxX" name="XBoxX" value={inputs.gameConsole}/>
-                </div>    */}
+                <div className="checkbox">
+                    <label htmlFor="PC">PC
+                    <input  
+                        type="checkbox" 
+                        id="PC" 
+                        name="gameConsole"  
+                        value="PC" 
+                        onChange={() => {if (checkPC.checked === true) {inputs.gameConsole.push(checkPC.value)}}}
+                    /></label>
+                    <label htmlFor="PS4">PS 4
+                    <input 
+                        type="checkbox" 
+                        id="PS4" 
+                        name="gameConsole" 
+                        value="PS4" 
+                        onChange={() => {if (checkPS4.checked === true) {inputs.gameConsole.push(checkPS4.value)}}} 
+                    /></label>
+                    <label htmlFor="PS5">PS 5
+                    <input 
+                        type="checkbox" 
+                        id="PS5" 
+                        name="gameConsole" 
+                        value="PS5" 
+                        onChange={() => {if (checkPS5.checked === true) {inputs.gameConsole.push(checkPS5.value)}}} 
+                    /></label>
+                    <label htmlFor="XBoxONE">XBox One
+                    <input 
+                        type="checkbox" 
+                        id="XBoxONE" 
+                        name="gameConsole" 
+                        value="XBoxONE" 
+                        onChange={() => {if (checkXBoxONE.checked === true) {inputs.gameConsole.push(checkXBoxONE.value)}}} 
+                    /></label>
+                    <label htmlFor="XBoxX">XBox X
+                    <input 
+                        type="checkbox" 
+                        id="XBoxX" 
+                        name="gameConsole" 
+                        value="XBoxX" 
+                        onChange={() => {if (checkXBoxX.checked === true) {inputs.gameConsole.push(checkXBoxX.value)}}} 
+                    /></label>
+                </div>   
                 <button>Submit</button>      
             </div>
         </form>

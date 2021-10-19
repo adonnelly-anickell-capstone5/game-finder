@@ -7,7 +7,6 @@ export default function Search(props) {
     const games = props.games
     const [dropValue, setDropValue] = useState()
     const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop)
-    
     const myRef = useRef(null)
     const executeScroll = () => scrollToRef(myRef)
     
@@ -18,6 +17,7 @@ export default function Search(props) {
       }
     
     console.log(`The current value is ${dropValue}`)
+    console.log(typeof dropValue)
 
     return (
         <div>
