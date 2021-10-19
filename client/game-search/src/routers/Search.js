@@ -1,6 +1,7 @@
 import React, { useState, useRef } from "react"
 import zelda from "./images/zelda.png"
 import Filters from "./Filters"
+import Suggested from "./Suggested"
 
 export default function Search(props) {
     const games = props.games
@@ -53,6 +54,7 @@ export default function Search(props) {
                 </div>
                 <h1 ref={myRef}>Suggested Games</h1>
                 <Filters  games={games} dropValue={dropValue} />
+                <Suggested/>
             </div>
         </div>
     )

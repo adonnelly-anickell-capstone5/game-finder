@@ -1,10 +1,11 @@
 import React, {useState} from 'react'
 import NewGame from "./NewGame"
+import App from "../App.js"
+
 import Border from "./images/border.png"
 
 
 export default function Profile(props){
-    const faveGames = props.faveGames
     const games = props.games
     const setGames = props.setGames
     
@@ -17,7 +18,8 @@ export default function Profile(props){
                 <h3>Players: {game.players}</h3> 
                 <h3>Category: {game.category}</h3>
                 <h3>Console: {game.gameConsole.join(', ')}</h3>    
-                <h3>Rating: {game.rating}</h3>          
+                <h3>Rating: {game.rating}</h3> 
+                <button onClick={()=>props.deleteFave(game._id)}>Delete From List</button>         
            </div>
        )
     })
@@ -36,3 +38,8 @@ export default function Profile(props){
         
     )
 }
+
+
+
+
+
