@@ -54,7 +54,7 @@ export default function Search(props) {
                 </div>
                 <h1 ref={myRef}>Suggested Games</h1>
                 <Filters  games={games} dropValue={dropValue} />
-                <Suggested/>
+                {/* <Suggested/> */}
             </div>
         </div>
     )
