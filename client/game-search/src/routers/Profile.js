@@ -8,6 +8,8 @@ import Border from "./images/border.png"
 export default function Profile(props){
     const games = props.games
     const setGames = props.setGames
+    const deleteGame = props.deleteGame
+    const handleToggle = props.handleToggle
     
     console.log(games)
     
@@ -19,7 +21,16 @@ export default function Profile(props){
                 <h3>Category: {game.category}</h3>
                 <h3>Console: {game.gameConsole.join(', ')}</h3>    
                 <h3>Rating: {game.rating}</h3> 
-                <button onClick={()=>props.handleToggle(game._id)}>{}Delete From List</button>         
+                <div className="game-box-btns">
+                    <button className="profile-btn" onClick={()=>deleteGame(game._id)}>{}Delete Game</button>
+                    <div className="profile-btn">                             
+                        {game.isFavorite ? 
+                            <img onClick={()=>handleToggle(game)} src="https://img.icons8.com/fluency/48/000000/pixel-heart.png"/>              
+                        :   <img onClick={()=>handleToggle(game)} src="https://img.icons8.com/ios-filled/50/000000/pixel-heart.png"/>
+                        }
+                    </div>       
+                </div>
+                   
            </div>
        )
     })

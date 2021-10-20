@@ -1,92 +1,95 @@
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
 
 body {
- background-color: black;
- text-align: center;
+  background-color: black;
+  text-align: center;
 }
 
 nav {
-    font-family: 'Press Start 2P', cursive;
-    background-color: black;
-    display: flex;
-    justify-content: space-between;
-    text-transform: uppercase;
+  font-family: "Press Start 2P", cursive;
+  background-color: black;
+  display: flex;
+  justify-content: space-between;
+  text-transform: uppercase;
 }
 
 /* unvisited link */
 a:link {
-    padding: 20px;
-    text-decoration: none;
-    color: white;
-    font-size: 35px;
-  }
-  
-  /* visited link */
-  a:visited {
-    padding: 20px;
-    text-decoration: none;
-    color: white;
-    font-size: 35px;  }
-  
-  /* mouse over link */
-  a:hover {
-    padding: 20px;
-    text-decoration: none;
-    color: #B53220;
-    font-size: 35px;  }
-  
-  /* selected link */
-  a:active {
-    padding: 20px;
-    text-decoration: none;
-    color: #B53220;
-    font-size: 35px;  }
-  
-  .zelda-img {
-      width: 100%;
-  }
+  padding: 20px;
+  text-decoration: none;
+  color: white;
+  font-size: 35px;
+}
 
-  .button-container{
-    /* display:inline-block; */
-    position:relative;
-    margin: auto;
+/* visited link */
+a:visited {
+  padding: 20px;
+  text-decoration: none;
+  color: white;
+  font-size: 35px;
+}
+
+/* mouse over link */
+a:hover {
+  padding: 20px;
+  text-decoration: none;
+  color: #b53220;
+  font-size: 35px;
+}
+
+/* selected link */
+a:active {
+  padding: 20px;
+  text-decoration: none;
+  color: #b53220;
+  font-size: 35px;
+}
+
+.zelda-img {
+  width: 100%;
+}
+
+.button-container {
+  /* display:inline-block; */
+  position: relative;
+  margin: auto;
 }
 
 .dropdown-sort {
-    position: absolute;
-    margin-left: auto;
-    margin-right: auto;
-    top: 1255px;
-    left: 0;
-    right: 0;
-    align-content: center;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  top: 1255px;
+  left: 0;
+  right: 0;
+  align-content: center;
 }
 
 .dropdown-sort select {
-    padding: 10px;
-    margin: 10px;
-    font-family: 'Press Start 2P', cursive;
-    background-color: #4241FE;
-    color: white;
+  padding: 10px;
+  margin: 10px;
+  font-family: "Press Start 2P", cursive;
+  background-color: #4241fe;
+  color: white;
 }
 
 h1 {
   color: white;
-  font-family: 'Press Start 2P', cursive;
+  font-family: "Press Start 2P", cursive;
   margin: 20px;
   text-transform: uppercase;
 }
 
 h2 {
   color: white;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Courier New", Courier, monospace;
   font-size: 40px;
 }
 
 .game-box {
   display: flex;
   flex-direction: column;
-  border: 3px solid  #4241FE;
+  border: 3px solid #4241fe;
   flex-wrap: wrap;
   width: 75%;
   margin: auto;
@@ -99,7 +102,6 @@ h2 {
   margin-left: auto;
   margin-right: auto;
   justify-content: center;
-
 }
 
 .form-container {
@@ -109,7 +111,6 @@ h2 {
   align-content: center;
   width: 50%;
   display: inline-block;
-
 }
 
 .game-container {
@@ -118,7 +119,6 @@ h2 {
   align-content: center;
   display: inline-block;
   width: 50%;
-
 }
 
 .new-game {
@@ -131,19 +131,23 @@ h2 {
   flex-wrap: wrap;
 }
 
-.new-game select, button, input, ::placeholder {
+.new-game select,
+button,
+input,
+::placeholder {
   padding: 10px;
   margin: 20px;
-  font-family: 'Press Start 2P', cursive;
-  background-color: #4241FE;
+  font-family: "Press Start 2P", cursive;
+  background-color: #4241fe;
   color: white;
   text-align: center;
 }
 
-input:focus, select:focus {
+input:focus,
+select:focus {
   outline: none !important;
-  border:1px solid #B53220;
-  box-shadow: 0 0 10px #719ECE;
+  border: 1px solid #b53220;
+  box-shadow: 0 0 10px #719ece;
 }
 
 .checkbox {
@@ -154,12 +158,26 @@ input:focus, select:focus {
 }
 
 .checkbox input {
-    width: 30px;
-    height: 30px;
-  }
+  width: 30px;
+  height: 30px;
+}
 
-  .checkbox label {
-    font-family: 'Courier New', Courier, monospace;
-    color: white;
-    font-size: 30px;
-  }
+.checkbox label {
+  font-family: "Courier New", Courier, monospace;
+  color: white;
+  font-size: 30px;
+}
+
+.profile-btn {
+  width: 30%;
+  font-size: 15px;
+  text-align: center;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.game-box-btns {
+  display: flex;
+  flex-direction: row;
+}

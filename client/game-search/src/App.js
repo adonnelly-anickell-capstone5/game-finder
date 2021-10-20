@@ -2,68 +2,62 @@ import React, {useState, useEffect} from 'react'
 import Nav from "../src/routers/Nav"
 import axios from "axios"
 
+// prevFave.isFavorite ? !prevFave.isFavorite: prevFave.isFavorite
+
 export default function App(props){
-    const [games, setGames] = useState([])
-    const [faveGames, setFaveGames] = useState([])
-   
- 
-    const handleToggle = (fave) => {
+    const [games, setGames] = useState([])   
 
-        // setFaveGames(prevFaves => {
-        //     if (prevFaves.includes(fave._id))
-        //       const copy = [...prevFaves]
-        //       return copy.splice(copy.findIndex() ,1)
-
-        //     return 
-        // });
-
-        setFaveGames(prevFaves => prevFaves
-            .map(game => game._id !== fave._id ? game : {...fave, isFavorite: !fave.isFavorite}));
-           console.log(`favorite ${fave.title}`)
-
-           fave.isFavorite = !isFavorite
-
-           console.log(faveGames)
-      }
-
-
-
-
-        //GET
-        function getGames(){
-          axios.get('/games',)
-              .then(res => setGames(res.data))
-              .catch(err => console.log(err))
-      }
-        //POST
-        function addGame(inputs){
-            axios.post(`/games`, inputs)
-                .then(res=> {
-                    setGames(prev =>[...prev, inputs])
-                })
-                .catch(err => console.log(err))
-        }
-    
-      //  DELETE from list
-        function deleteGame(gameId){
-            axios.delete(`/games/${gameId}`)
-            .then(res =>{
-                setGames(prev=> prev.filter(game => game._id !== gameId))
+    const handleToggle = (game) => {
+        console.log("toggle has been pushed")
+        editGame()
+        console.log(games[14].isFavorite)
+    }
+        
+    //PUT
+    function editGame(updates, gameId){
+        axios.put(`/games/${gameId}`, updates)
+            .then(res=>{
+                setGames(prev => prev.map(game => game._id !== gameId ? game : res.data))
+                console.log(updates)
             })
             .catch(err => console.log(err))
-    
-        }
-        
-        useEffect(()=>{ 
-            getGames()
-         }, [])
-    
-        return(
-            <div>
-                <Nav games={games} setGames={setGames}/>
-                {/* <Suggested submit = {addGame}/> */}
-               
-            </div>
-        )
+    }
+
+    //GET
+    function getGames(){
+        axios.get('/games',)
+            .then(res => setGames(res.data))
+            .catch(err => console.log(err))
+    }
+    //POST
+    function addGame(inputs){
+        axios.post(`/games`, inputs)
+            .then(res=> {
+                setGames(prev =>[...prev, inputs])
+            })
+            .catch(err => console.log(err))
+    }
+
+    //  DELETE from list
+    function deleteGame(gameId){
+        axios.delete(`/games/${gameId}`)
+        .then(res =>{
+            setGames(prev=> prev.filter(game => game._id !== gameId))
+        })
+        .catch(err => console.log(err))
+
     }
     
+    useEffect(()=>{ 
+        getGames()
+        }, [])
+
+    return(
+        <div>
+            <Nav games={games} setGames={setGames} deleteGame={deleteGame} handleToggle={handleToggle}/>
+            {/* <Suggested submit = {addGame}/> */}
+            
+        </div>
+    )
+}
+
